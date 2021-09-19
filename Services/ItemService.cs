@@ -15,7 +15,7 @@ namespace Services
 
         public void Save(ItemDTO itemDTO)
         {
-            //string saveItem = itemDTO.Text;
+           // string saveValidText = itemDTO.Text;
         }
 
     }

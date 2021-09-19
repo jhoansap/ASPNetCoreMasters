@@ -28,9 +28,12 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [HttpPost]
         public void Post([FromQuery] ItemCreateBindingModel model)
         {
-            ItemDTO text = new ItemDTO { Text = model.Text }; 
+            if (ModelState.IsValid)
+            {
+                ItemDTO text = new ItemDTO { Text = model.Text };
 
-            _itemService.Save(text);
+                _itemService.Save(text);
+            }
         }
     }
 }
