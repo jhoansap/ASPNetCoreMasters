@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj": {}
+    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj": {
+    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
+        "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
         "projectName": "ASPNetCoreMastersTodoList.API",
-        "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
+        "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
         "packagesPath": "C:\\Users\\jhoanp\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\ASPNetCoreMastersTodoList.API\\obj\\",
+        "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jhoanp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj": {
-                "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj"
+              "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj": {
+                "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj": {
+    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj",
+        "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\jhoanp\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\obj\\",
+        "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jhoanp\\AppData\\Roaming\\NuGet\\NuGet.Config",

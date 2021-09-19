@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Services.dll": {}
-        }
-      }
-    }
+    ".NETCoreApp,Version=v3.1": {}
   },
-  "libraries": {
-    "Services/1.0.0": {
-      "type": "project",
-      "path": "../Services/Services.csproj",
-      "msbuildProject": "../Services/Services.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "Services >= 1.0.0"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\jhoanp\\.nuget\\packages\\": {}
@@ -32,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
-      "projectName": "ASPNetCoreMastersTodoList.API",
-      "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
+      "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\DomainModels.csproj",
+      "projectName": "DomainModels",
+      "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\DomainModels.csproj",
       "packagesPath": "C:\\Users\\jhoanp\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\obj\\",
+      "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jhoanp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,11 +33,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj": {
-              "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -79,9 +56,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

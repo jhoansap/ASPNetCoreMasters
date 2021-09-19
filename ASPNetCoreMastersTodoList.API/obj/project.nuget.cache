@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iHBIuZ3lU6nqh28M+dHlsj2fefVEEzW0swkWM9jMMc+xlqnPh50I+wGFn1Q1z40JoB6+ahmmTscKPMiEWWbohg==",
+  "dgSpecHash": "+mlqhaVh4mhpPbX3DePN9P8gqyx7h+pxa7SssCkAVQW83v6GcBsgcSHb9uBN5YocaMAG1oUnP7KUx0lohcJQ3A==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
+  "projectFilePath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

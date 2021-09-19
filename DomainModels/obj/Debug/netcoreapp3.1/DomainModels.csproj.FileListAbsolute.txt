@@ -1,0 +1,8 @@
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\bin\Debug\netcoreapp3.1\DomainModels.deps.json
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\bin\Debug\netcoreapp3.1\DomainModels.dll
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\bin\Debug\netcoreapp3.1\DomainModels.pdb
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.AssemblyInfoInputs.cache
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.AssemblyInfo.cs
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.csproj.CoreCompileInputs.cache
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.dll
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.pdb

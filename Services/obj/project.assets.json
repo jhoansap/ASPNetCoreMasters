@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj",
+      "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\jhoanp\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\obj\\",
+      "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jhoanp\\AppData\\Roaming\\NuGet\\NuGet.Config",

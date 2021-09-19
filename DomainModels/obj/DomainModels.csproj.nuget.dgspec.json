@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj": {}
+    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\DomainModels.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj": {
+    "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\DomainModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
-        "projectName": "Services",
-        "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\DomainModels.csproj",
+        "projectName": "DomainModels",
+        "projectPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\DomainModels.csproj",
         "packagesPath": "C:\\Users\\jhoanp\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\obj\\",
+        "outputPath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\DomainModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jhoanp\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UV67n3Pb0mYDNZuhvMH5gT5Tc+3gxyWim8R+vsde4gbtKeg6qJvUXMWAn0DhcYs+PMkmXTcrFvpr+UlHsyNULA==",
+  "dgSpecHash": "0Hw30wGlvGuq2I0Kb0JHycm5tY6uTIxc7zoNZHwU+R/C+/j+6CfmPUSNuBaVxdutTIS1BE+vLh6lMX+vMXVRkg==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList\\Services\\Services.csproj",
+  "projectFilePath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
