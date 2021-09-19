@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNetCoreMastersTodoList.API", "ASPNetCoreMastersTodoList.API\ASPNetCoreMastersTodoList.API.csproj", "{A8E86DB2-5F9D-4062-9966-758413D66D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNetCoreMastersTodoList.API", "ASPNetCoreMastersTodoList.API\ASPNetCoreMastersTodoList.API.csproj", "{A8E86DB2-5F9D-4062-9966-758413D66D6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{FFE3C83C-FA65-4D3B-B223-E0188EBBCF48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{FFE3C83C-FA65-4D3B-B223-E0188EBBCF48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModels", "DomainModels\DomainModels.csproj", "{71C7935E-6F3B-440A-8D08-D5C33FE4CAF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FFE3C83C-FA65-4D3B-B223-E0188EBBCF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFE3C83C-FA65-4D3B-B223-E0188EBBCF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFE3C83C-FA65-4D3B-B223-E0188EBBCF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C7935E-6F3B-440A-8D08-D5C33FE4CAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C7935E-6F3B-440A-8D08-D5C33FE4CAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C7935E-6F3B-440A-8D08-D5C33FE4CAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C7935E-6F3B-440A-8D08-D5C33FE4CAF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

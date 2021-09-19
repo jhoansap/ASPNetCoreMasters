@@ -322,7 +322,18 @@
           "ASPNetCoreMastersTodoList.API.dll": {}
         }
       },
+      "DomainModels/1.0.0": {
+        "runtime": {
+          "DomainModels.dll": {}
+        },
+        "compile": {
+          "DomainModels.dll": {}
+        }
+      },
       "Services/1.0.0": {
+        "dependencies": {
+          "DomainModels": "1.0.0"
+        },
         "runtime": {
           "Services.dll": {}
         },
@@ -2026,6 +2037,11 @@
   },
   "libraries": {
     "ASPNetCoreMastersTodoList.API/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DomainModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

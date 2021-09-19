@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "0Hw30wGlvGuq2I0Kb0JHycm5tY6uTIxc7zoNZHwU+R/C+/j+6CfmPUSNuBaVxdutTIS1BE+vLh6lMX+vMXVRkg==",
+  "dgSpecHash": "JtGVUiyH3aWZGx9P122FcIUP0yG02fWIDOGNJAAuY1i/kUpUHpG5IK2FUPmKtrH1Wieotjk793D92ioyRTqSzQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\Services.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\Services\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

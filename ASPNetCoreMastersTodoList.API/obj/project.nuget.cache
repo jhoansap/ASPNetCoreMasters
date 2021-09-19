@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "+mlqhaVh4mhpPbX3DePN9P8gqyx7h+pxa7SssCkAVQW83v6GcBsgcSHb9uBN5YocaMAG1oUnP7KUx0lohcJQ3A==",
+  "dgSpecHash": "Uyp5zUu3hZX9DQQCj5Mbn2klC9b6/d2juRk74PWtFJSSFAHb9f74bhX6VLxH3xnnW0FfW9YeZcRvMaWD0SpC7Q==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\ASPNetCoreMastersTodoList.API.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

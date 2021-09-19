@@ -2,9 +2,22 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "DomainModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/DomainModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DomainModels.dll": {}
+        }
+      },
       "Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DomainModels": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Services.dll": {}
         },
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "DomainModels/1.0.0": {
+      "type": "project",
+      "path": "../DomainModels/DomainModels.csproj",
+      "msbuildProject": "../DomainModels/DomainModels.csproj"
+    },
     "Services/1.0.0": {
       "type": "project",
       "path": "../Services/Services.csproj",
@@ -89,5 +107,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\ASPNetCoreMasters\\ASPNetCoreMasters\\ASPNetCoreMastersTodoList.API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
