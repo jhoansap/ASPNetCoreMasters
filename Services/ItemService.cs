@@ -1,4 +1,5 @@
-﻿using Services.DTO;
+﻿using DomainModels;
+using Services.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,11 @@ namespace Services
 
         public void Save(ItemDTO itemDTO)
         {
-           // string saveValidText = itemDTO.Text;
+            var item = new Item()
+            {
+                Text = itemDTO.Text
+            };
+            
         }
 
     }

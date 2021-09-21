@@ -6,3 +6,4 @@ C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreap
 C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.csproj.CoreCompileInputs.cache
 C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.dll
 C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.pdb
+C:\Projects\ASPNetCoreMasters\ASPNetCoreMasters\DomainModels\obj\Debug\netcoreapp3.1\DomainModels.csproj.AssemblyReference.cache
