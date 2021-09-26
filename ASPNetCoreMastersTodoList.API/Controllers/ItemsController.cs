@@ -31,7 +31,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [Route("/items/{itemId}")]
         public IActionResult Get(int itemId)
         {
-            return Ok(_itemService.GetById(itemId));
+            return Ok(_itemService.Get(itemId));
         }
 
 
@@ -39,28 +39,29 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [Route("/items/filterBy")]
         public IActionResult GetByFilters([FromQuery] Dictionary<string, string> filters)
         {
-            return Ok(_itemService.GetByFilters(filters));
+            return Ok(_itemService.GetAllByFilters(filters));
         }
 
         [HttpPost("/items")]
         public IActionResult Post(ItemCreateBindingModel model)
         {
-            _itemService.Save(new ItemDTO() { Text = model.Text });
+            _itemService.Add(new ItemDTO() { Text = model.Text });
             return Ok();
         }
 
         [HttpPut("/items/{itemId}")]
         public IActionResult Put(int itemId, [FromBody] ItemUpdateBindingModel itemUpdateModel)
         {
-            _itemService.Update(itemId, new ItemDTO() { Text = itemUpdateModel.Text });
+            _itemService.Update(new ItemDTO() { Text = itemUpdateModel.Text });
             return Ok();
         }
 
 
         [HttpDelete("/items/{itemId}")]
-        public IActionResult Delete(int itemId)
+        public IActionResult Delete(int id)
         {
-            return Ok(_itemService.Delete(itemId));
+            _itemService.Delete(id);
+            return Ok();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DomainModels;
+using Repositories;
 using Services.DTO;
 using System;
 using System.Collections.Generic;
@@ -7,55 +8,65 @@ using System.Text;
 
 namespace Services
 {
-    public class ItemService
+    public class ItemService:IItemService
     {
 
-        private readonly List<Item> items = new List<Item>() {
-                new Item(){ Id = 1, Text="user1"},
-                new Item(){ Id = 2, Text="user2"},
-                new Item(){ Id = 3, Text="user3"}
-            };
+        IItemRepository itemRepository = new ItemRepository();
 
-        public Item GetById(int itemId)
-        {
-            var item = new Item();
-            item = items.FirstOrDefault(i => i.Id == itemId);
-            return item;
-        }
 
-        public Dictionary<string, string> GetByFilters(Dictionary<string, string> filters)
+        public IEnumerable<ItemDTO> GetAll()
         {
-            return filters;
-        }
+            var items = itemRepository.All().Select(i => new ItemDTO
+            {
+                Id = i.Id,
+                Text = i.Text
+            }).AsEnumerable();
 
-        public List<Item> GetAll()
-        {
             return items;
         }
 
-        public void Save(ItemDTO itemDTO)
+        public IEnumerable<ItemDTO> GetAllByFilters(Dictionary<string, string> filters)
         {
-            var item = new Item()
+            //var items = itemRepository.All().Where
+            return Enumerable.Empty<ItemDTO>();
+        }
+
+        public ItemDTO Get(int itemId)
+        {
+           
+            var item = itemRepository.All().Where(i => i.Id == itemId).FirstOrDefault();
+            ItemDTO itemDTO = new ItemDTO();
+            if (item != null)
             {
-                Id = itemDTO.Id,
-                Text = itemDTO.Text
-            };
-            
+                itemDTO.Id = item.Id;
+                itemDTO.Text = item.Text;
+            }
+            return itemDTO;
         }
 
-        public void Update(int itemId, ItemDTO itemDTO)
+        public void Add(ItemDTO itemDto)
         {
-            var item = new Item()
+            var item = new Item
             {
-                Id = itemDTO.Id,
-                Text = itemDTO.Text
+                Id = itemDto.Id,
+                Text = itemDto.Text
             };
+            itemRepository.Save(item);
         }
 
-        public string Delete(int itemId)
+        public void Update(ItemDTO itemDto)
         {
-            return "Delete " + itemId;
+            var item = new Item
+            {
+                Id = itemDto.Id,
+                Text = itemDto.Text
+            };
+            //update
         }
 
+        public void Delete(int id)
+        {
+            itemRepository.Delete(id);
+        }
     }
 }
