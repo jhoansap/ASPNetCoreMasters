@@ -45,7 +45,7 @@ namespace ASPNetCoreMastersTodoList.API
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }
