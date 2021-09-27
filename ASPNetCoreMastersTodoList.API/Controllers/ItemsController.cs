@@ -52,12 +52,14 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [HttpPut("/items/{itemId}")]
         public IActionResult Put(int itemId, [FromBody] ItemUpdateBindingModel itemUpdateModel)
         {
-            _itemService.Update(new ItemDTO() { Text = itemUpdateModel.Text });
+            _itemService.Update(new ItemDTO() {  
+                                    Id = itemUpdateModel.Id,
+                                    Text = itemUpdateModel.Text });
             return Ok();
         }
 
 
-        [HttpDelete("/items/{itemId}")]
+        [HttpDelete("/items/{id}")]
         public IActionResult Delete(int id)
         {
             _itemService.Delete(id);

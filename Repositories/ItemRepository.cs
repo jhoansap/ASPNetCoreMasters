@@ -21,12 +21,19 @@ namespace Repositories
         public void Delete(int id)
         {
             Item item = dataContext.Items.Where(i => i.Id == id).FirstOrDefault();
-            if (item != null) dataContext.Items.Remove(item);
+            if (item != null) 
+                dataContext.Items.Remove(item);
         }
 
         public void Save(Item item)
         {
-            dataContext.Items.Add(item);
+            if (item.Id == 0)
+                dataContext.Items.Add(item);
+            else
+            {
+                Item selectedItem = dataContext.Items.Where(i => i.Id == item.Id).FirstOrDefault();
+                selectedItem.Text = item.Text;
+            }
         }
     }
 }

@@ -48,7 +48,6 @@ namespace Services
         {
             var item = new Item
             {
-                Id = itemDto.Id,
                 Text = itemDto.Text
             };
             itemRepository.Save(item);
@@ -61,7 +60,7 @@ namespace Services
                 Id = itemDto.Id,
                 Text = itemDto.Text
             };
-            //update
+            itemRepository.Save(item);
         }
 
         public void Delete(int id)
