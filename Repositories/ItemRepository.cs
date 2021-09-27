@@ -9,30 +9,46 @@ namespace Repositories
     public class ItemRepository : IItemRepository
     {
 
-        DataContext dataContext = new DataContext();
+        private readonly DataContext _dataContext;
+
+        public ItemRepository(DataContext dataContext)
+        {
+            this._dataContext = dataContext;
+        }
 
         public IQueryable<Item> All()
         {
-            var items = dataContext.Items.AsQueryable();
+            var items = this._dataContext.Items.AsQueryable();
             return items;
         }
              
 
         public void Delete(int id)
         {
-            Item item = dataContext.Items.Where(i => i.Id == id).FirstOrDefault();
-            if (item != null) 
-                dataContext.Items.Remove(item);
+            Item item = this._dataContext.Items.Where(i => i.Id == id).FirstOrDefault();
+            if (item != null)
+                this._dataContext.Items.Remove(item);
         }
 
         public void Save(Item item)
         {
             if (item.Id == 0)
-                dataContext.Items.Add(item);
+            {
+                var maxVal = _dataContext.Items.Select(i => i.Id).Max();
+                item.Id = maxVal + 1;
+                this._dataContext.Items.Add(item);
+            }
             else
             {
-                Item selectedItem = dataContext.Items.Where(i => i.Id == item.Id).FirstOrDefault();
-                selectedItem.Text = item.Text;
+                var selectedItem = this._dataContext.Items.Where(i => i.Id == item.Id).FirstOrDefault();
+                if (selectedItem != null)
+                {
+                    selectedItem.Text = item.Text;
+                }
+                else
+                {
+                    this._dataContext.Items.Add(item);
+                }
             }
         }
     }

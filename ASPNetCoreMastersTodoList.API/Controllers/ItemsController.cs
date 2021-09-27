@@ -14,21 +14,21 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
     [Route("[controller]")]
     public class ItemsController : ControllerBase
     {
-        private readonly ItemService _itemService;
+        private readonly IItemService _itemService;
 
-        public ItemsController()
+        public ItemsController(IItemService itemService)
         {
-            this._itemService = new ItemService();
+            _itemService = itemService;
         }
 
-        [HttpGet("/items")]
+        [HttpGet]
         public IActionResult Get()
         {
             return Ok(_itemService.GetAll());
         }
 
         [HttpGet]
-        [Route("/items/{itemId}")]
+        [Route("{itemId}")]
         public IActionResult Get(int itemId)
         {
             return Ok(_itemService.Get(itemId));
@@ -36,20 +36,25 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
 
 
         [HttpGet]
-        [Route("/items/filterBy")]
+        [Route("filterBy")]
         public IActionResult GetByFilters([FromQuery] Dictionary<string, string> filters)
         {
-            return Ok(_itemService.GetAllByFilters(filters));
+            string sText = filters.TryGetValue("text", out sText) ? sText : string.Empty;
+            string sId = filters.TryGetValue("id", out sId) ? sId : string.Empty;
+            var item = new ItemByFilterDTO()
+                 { Id = int.TryParse(sId, out int id) ? id : 0,
+                   Text = sText};
+            return Ok(_itemService.GetAllByFilters(item));
         }
 
-        [HttpPost("/items")]
+        [HttpPost]
         public IActionResult Post(ItemCreateBindingModel model)
         {
             _itemService.Add(new ItemDTO() { Text = model.Text });
             return Ok();
         }
 
-        [HttpPut("/items/{itemId}")]
+        [HttpPut("{itemId}")]
         public IActionResult Put(int itemId, [FromBody] ItemUpdateBindingModel itemUpdateModel)
         {
             _itemService.Update(new ItemDTO() {  
@@ -59,7 +64,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         }
 
 
-        [HttpDelete("/items/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             _itemService.Delete(id);

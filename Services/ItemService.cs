@@ -11,12 +11,17 @@ namespace Services
     public class ItemService:IItemService
     {
 
-        IItemRepository itemRepository = new ItemRepository();
+        private readonly IItemRepository _itemRepository;
+
+        public ItemService(IItemRepository itemRepository)
+        {
+            this._itemRepository = itemRepository;
+        }
 
 
         public IEnumerable<ItemDTO> GetAll()
         {
-            var items = itemRepository.All().Select(i => new ItemDTO
+            var items = this._itemRepository.All().Select(i => new ItemDTO
             {
                 Id = i.Id,
                 Text = i.Text
@@ -25,16 +30,17 @@ namespace Services
             return items;
         }
 
-        public IEnumerable<ItemDTO> GetAllByFilters(Dictionary<string, string> filters)
+        public IEnumerable<ItemDTO> GetAllByFilters(ItemByFilterDTO itemByFilterDTO)
         {
-            //var items = itemRepository.All().Where
-            return Enumerable.Empty<ItemDTO>();
+            var items = this._itemRepository.All().Where(i => i.Id == itemByFilterDTO.Id || i.Text == itemByFilterDTO.Text)
+                                                    .Select(i => new ItemDTO { Id = i.Id, Text = i.Text });
+            return items;
         }
 
         public ItemDTO Get(int itemId)
         {
            
-            var item = itemRepository.All().Where(i => i.Id == itemId).FirstOrDefault();
+            var item = this._itemRepository.All().Where(i => i.Id == itemId).FirstOrDefault();
             ItemDTO itemDTO = new ItemDTO();
             if (item != null)
             {
@@ -50,7 +56,7 @@ namespace Services
             {
                 Text = itemDto.Text
             };
-            itemRepository.Save(item);
+            this._itemRepository.Save(item);
         }
 
         public void Update(ItemDTO itemDto)
@@ -60,12 +66,12 @@ namespace Services
                 Id = itemDto.Id,
                 Text = itemDto.Text
             };
-            itemRepository.Save(item);
+            this._itemRepository.Save(item);
         }
 
         public void Delete(int id)
         {
-            itemRepository.Delete(id);
+            this._itemRepository.Delete(id);
         }
     }
 }

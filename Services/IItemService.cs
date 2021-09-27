@@ -10,7 +10,7 @@ namespace Services
     public interface IItemService
     {
         public IEnumerable<ItemDTO> GetAll();
-        public IEnumerable<ItemDTO> GetAllByFilters(Dictionary<string, string> filters);
+        public IEnumerable<ItemDTO> GetAllByFilters(ItemByFilterDTO itemByFilterDTO);
         public ItemDTO Get(int itemId);
         public void Add(ItemDTO itemDto);
         public void Update(ItemDTO itemDTO);
