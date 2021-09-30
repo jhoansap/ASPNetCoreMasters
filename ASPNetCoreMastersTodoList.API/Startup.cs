@@ -1,3 +1,4 @@
+using ASPNetCoreMastersTodoList.API.BindingModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,7 +32,7 @@ namespace ASPNetCoreMastersTodoList.API
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IItemService, ItemService>();
             services.AddSingleton<DataContext>();
-
+            services.Configure<AuthenticationSettings>(Configuration.GetSection("Authentication"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
