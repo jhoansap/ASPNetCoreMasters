@@ -1,5 +1,6 @@
 using ASPNetCoreMastersTodoList.API.BindingModels;
 using ASPNetCoreMastersTodoList.API.Filters;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,11 +11,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Repositories;
 using Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ASPNetCoreMastersTodoList.API
@@ -31,10 +34,7 @@ namespace ASPNetCoreMastersTodoList.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(options =>
-            {
-                options.Filters.Add(new PerformanceResourceFilter());
-            });
+           
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IItemService, ItemService>();
             services.AddSingleton<DataContext>();
@@ -42,10 +42,36 @@ namespace ASPNetCoreMastersTodoList.API
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
+
             services.AddIdentity<IdentityUser, IdentityRole>()
               .AddEntityFrameworkStores<DataDBContext>()
               .AddDefaultTokenProviders();
+
             services.Configure<AuthenticationSettings>(Configuration.GetSection("Authentication"));
+
+            SecurityKey securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["jwt:secret"]));
+            services.Configure<JwtOptions>(_ => _.SecurityKey = securityKey);
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+              .AddJwtBearer(options =>
+              {
+                  options.TokenValidationParameters = new TokenValidationParameters
+                  {
+                      ValidateAudience = false,
+                      ValidateIssuer = false,
+                      IssuerSigningKey = securityKey
+                  };
+              });
+
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(new PerformanceResourceFilter());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,9 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ASPNetCoreMastersTodoList.API.Filters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASPNetCoreMastersTodoList.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     [EnsureItemExists]
