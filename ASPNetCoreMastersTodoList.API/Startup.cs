@@ -3,7 +3,9 @@ using ASPNetCoreMastersTodoList.API.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -36,6 +38,13 @@ namespace ASPNetCoreMastersTodoList.API
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IItemService, ItemService>();
             services.AddSingleton<DataContext>();
+            services.AddDbContext<DataDBContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+            });
+            services.AddIdentity<IdentityUser, IdentityRole>()
+              .AddEntityFrameworkStores<DataDBContext>()
+              .AddDefaultTokenProviders();
             services.Configure<AuthenticationSettings>(Configuration.GetSection("Authentication"));
         }
 
@@ -53,6 +62,7 @@ namespace ASPNetCoreMastersTodoList.API
 
             app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
