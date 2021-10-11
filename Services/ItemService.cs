@@ -69,9 +69,19 @@ namespace Services
             this._itemRepository.Save(item);
         }
 
-        public void Delete(int id)
+        public void Delete(int itemId)
         {
-            this._itemRepository.Delete(id);
+            this._itemRepository.Delete(itemId);
+        }
+
+        public bool ItemExist(int itemId)
+        {
+            var item = this._itemRepository.All().Where(i => i.Id == itemId).FirstOrDefault();
+            if (item != null) 
+                return true; 
+            else 
+                return false;
+             
         }
     }
 }

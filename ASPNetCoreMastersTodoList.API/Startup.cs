@@ -1,4 +1,5 @@
 using ASPNetCoreMastersTodoList.API.BindingModels;
+using ASPNetCoreMastersTodoList.API.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +29,10 @@ namespace ASPNetCoreMastersTodoList.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(new PerformanceResourceFilter());
+            });
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IItemService, ItemService>();
             services.AddSingleton<DataContext>();

@@ -7,11 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ASPNetCoreMastersTodoList.API.Filters;
 
 namespace ASPNetCoreMastersTodoList.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnsureItemExists]
     public class ItemsController : ControllerBase
     {
         private readonly IItemService _itemService;
@@ -31,7 +33,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [Route("{itemId}")]
         public IActionResult Get(int itemId)
         {
-            return Ok(_itemService.Get(itemId));
+             return Ok(_itemService.Get(itemId));
         }
 
 
@@ -64,10 +66,10 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         }
 
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpDelete("{itemId}")]
+        public IActionResult Delete(int itemId)
         {
-            _itemService.Delete(id);
+            _itemService.Delete(itemId);
             return Ok();
         }
     }
