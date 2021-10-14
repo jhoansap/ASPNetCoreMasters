@@ -9,9 +9,16 @@ namespace Repositories
     public class ItemRepository : IItemRepository
     {
 
-        private readonly DataContext _dataContext;
+        //private readonly DataContext _dataContext;
 
-        public ItemRepository(DataContext dataContext)
+        //public ItemRepository(DataContext dataContext)
+        //{
+        //    this._dataContext = dataContext;
+        //}
+
+        private readonly DataDBContext _dataContext;
+
+        public ItemRepository(DataDBContext dataContext)
         {
             this._dataContext = dataContext;
         }
