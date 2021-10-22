@@ -1,4 +1,5 @@
 ﻿using DomainModels;
+using Microsoft.AspNetCore.Identity;
 using Repositories;
 using Services.DTO;
 using System;
@@ -46,15 +47,19 @@ namespace Services
             {
                 itemDTO.Id = item.Id;
                 itemDTO.Text = item.Text;
+                itemDTO.CreatedBy = item.CreatedBy;
+                itemDTO.DateCreated = item.DateCreated;
             }
             return itemDTO;
         }
 
-        public void Add(ItemDTO itemDto)
+        public void Add(ItemDTO itemDto, IdentityUser user)
         {
             var item = new Item
             {
-                Text = itemDto.Text
+                Text = itemDto.Text,
+                CreatedBy = user.Id,
+                DateCreated = DateTime.UtcNow
             };
             this._itemRepository.Save(item);
         }
