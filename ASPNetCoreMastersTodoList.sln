@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPNetCoreMastersTodoList.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{FFE3C83C-FA65-4D3B-B223-E0188EBBCF48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModels", "DomainModels\DomainModels.csproj", "{8C3785A3-6382-4E7C-939D-EC1988BED0E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModels", "DomainModels\DomainModels.csproj", "{8C3785A3-6382-4E7C-939D-EC1988BED0E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{9748CF71-5C19-466C-B6D8-89299E161309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{9748CF71-5C19-466C-B6D8-89299E161309}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

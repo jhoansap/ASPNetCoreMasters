@@ -1,6 +1,9 @@
+using ASPNetCoreMastersTodoList.API.Authorization;
 using ASPNetCoreMastersTodoList.API.BindingModels;
 using ASPNetCoreMastersTodoList.API.Filters;
+using DomainModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -67,6 +70,14 @@ namespace ASPNetCoreMastersTodoList.API
                       IssuerSigningKey = securityKey
                   };
               });
+
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("CanEditItems", policy => policy.Requirements.Add(new IsItemOwnerRequirement()));
+            });
+
+            services.AddScoped<IAuthorizationHandler, IsItemOwnerHandler>();
 
             services.AddControllers(options =>
             {

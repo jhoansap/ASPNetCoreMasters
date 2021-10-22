@@ -1,4 +1,5 @@
 ﻿using DomainModels;
+using Microsoft.AspNetCore.Identity;
 using Services.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Services
         public IEnumerable<ItemDTO> GetAll();
         public IEnumerable<ItemDTO> GetAllByFilters(ItemByFilterDTO itemByFilterDTO);
         public ItemDTO Get(int itemId);
-        public void Add(ItemDTO itemDto);
+        public void Add(ItemDTO itemDto, IdentityUser user);
         public void Update(ItemDTO itemDTO);
         public void Delete(int id);
         public bool ItemExist(int itemId);

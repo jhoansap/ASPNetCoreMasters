@@ -35,15 +35,17 @@ namespace Repositories
             Item item = this._dataContext.Items.Where(i => i.Id == id).FirstOrDefault();
             if (item != null)
                 this._dataContext.Items.Remove(item);
+            this._dataContext.SaveChanges();
         }
 
         public void Save(Item item)
         {
             if (item.Id == 0)
             {
-                var maxVal = _dataContext.Items.Select(i => i.Id).Max();
-                item.Id = maxVal + 1;
+                //var maxVal = _dataContext.Items.Select(i => i.Id).Max();
+                //item.Id = maxVal + 1;
                 this._dataContext.Items.Add(item);
+                this._dataContext.SaveChanges();
             }
             else
             {
@@ -51,10 +53,12 @@ namespace Repositories
                 if (selectedItem != null)
                 {
                     selectedItem.Text = item.Text;
+                    this._dataContext.SaveChanges();
                 }
                 else
                 {
                     this._dataContext.Items.Add(item);
+                    this._dataContext.SaveChanges();
                 }
             }
         }
