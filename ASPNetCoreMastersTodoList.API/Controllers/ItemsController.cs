@@ -24,9 +24,11 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         private readonly IItemService _itemService;
         private readonly UserManager<IdentityUser> _userService;
         private readonly IAuthorizationService _authService;
+        private readonly ILogger<ItemsController> _logger;
 
-        public ItemsController(IItemService itemService, IAuthorizationService authService, UserManager<IdentityUser> userService)
+        public ItemsController(ILogger<ItemsController> logger, IItemService itemService, IAuthorizationService authService, UserManager<IdentityUser> userService)
         {
+            _logger = logger;
             _itemService = itemService;
             _authService = authService;
             _userService = userService;
@@ -35,6 +37,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            _logger.LogInformation("[Item Service Call] Getting all items {RequestTime}", DateTime.Now);
             return Ok(_itemService.GetAll());
         }
 
@@ -42,7 +45,8 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [Route("{itemId}")]
         public IActionResult Get(int itemId)
         {
-             return Ok(_itemService.Get(itemId));
+            _logger.LogInformation("[Item Service Call] Getting item by Id {itemId} {RequestTime}", itemId, DateTime.Now);
+            return Ok(_itemService.Get(itemId));
         }
 
 
@@ -50,6 +54,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [Route("filterBy")]
         public IActionResult GetByFilters([FromQuery] Dictionary<string, string> filters)
         {
+            _logger.LogInformation("[Item Service Call] Filtering items with {@filters} {RequestTime}", filters, DateTime.Now);
             string sText = filters.TryGetValue("text", out sText) ? sText : string.Empty;
             string sId = filters.TryGetValue("id", out sId) ? sId : string.Empty;
             var item = new ItemByFilterDTO()
@@ -61,6 +66,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ItemCreateBindingModel itemCreateModel)
         {
+            _logger.LogInformation("[Item Service Call] Adding item {@itemCreateModel} {RequestTime}", itemCreateModel, DateTime.Now);
             var email = ((ClaimsIdentity)User.Identity).FindFirst("Email");
             var user = await _userService.FindByNameAsync(email.Value);
 
@@ -72,6 +78,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [HttpPut("{itemId}")]
         public async Task<IActionResult> Put(int itemId, [FromBody] ItemUpdateBindingModel itemUpdateModel)
         {
+            _logger.LogInformation("[Item Service Call] Updating item {itemId} {@itemUpdateModel} {RequestTime}", itemId, itemUpdateModel, DateTime.Now);
             var item = _itemService.Get(itemId);
             var authResult = await _authService.AuthorizeAsync(User, new ItemDTO(){CreatedBy = item.CreatedBy}, "CanEditItems");
 
@@ -93,6 +100,7 @@ namespace ASPNetCoreMastersTodoList.API.Controllers
         [HttpDelete("{itemId}")]
         public IActionResult Delete(int itemId)
         {
+            _logger.LogInformation("[Item Service Call] Deleting item {itemId} {RequestTime}", itemId, DateTime.Now);
             _itemService.Delete(itemId);
             return Ok();
         }
